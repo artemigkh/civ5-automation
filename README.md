@@ -13,6 +13,9 @@ pandas
 VP is ran with a modpack for the following two reasons: speeding up time between games, and reducing the amount of menu automation needed to be done.
 Use a provided modpack or follow the steps at https://civ-5-cbp.fandom.com/wiki/Creating_a_Modpack to create one and place it in `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\DLC` (or your DLC location)
 
+Alternatively, I have provided a modpack one can use here:
+https://www.dropbox.com/s/qq3c99yl07ojqsx/Modpack.VoxPopuli.2.7.3.ScoreLogging.zip?dl=0
+
 ### Steam Options
 Properties -> General -> Launch Options
 must be set to
@@ -65,3 +68,5 @@ python3 main.py
 from the root of the repo.
 
 Will save completed games to the `complete` directory in the civ 5 documents location (adjacent to `MODS`)
+
+My recommendation for after setup is to run 1v1 pangea games starting in information era to make sure the script cycles games and saves logs from each one correctly.
