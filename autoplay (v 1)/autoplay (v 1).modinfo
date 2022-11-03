@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="6425a044-b9e8-45c1-9e01-c860840f7985" version="1">
+  <Properties>
+    <Name>autoplay</Name>
+    <Stability>Alpha</Stability>
+    <Teaser>automation</Teaser>
+    <Description>automation</Description>
+    <Authors>Vern</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>0</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>0</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>0</ReloadUnitSystem>
+  </Properties>
+  <Dependencies />
+  <References>
+    <Mod id="d1b6328c-ff44-4b0d-aad7-c657f83610cd" minversion="0" maxversion="999" title="(1) Community Patch" />
+    <Mod id="8411a7a8-dad3-4622-a18e-fcc18324c799" minversion="0" maxversion="999" title="(2) Vox Populi" />
+  </References>
+  <Blocks />
+  <Files>
+    <File md5="73358BDD8B1C2441F8C8EA61667C74CF" import="1">autoplay.lua</File>
+    <File md5="228750EF6D520646E3C53B6109FB6634" import="1">game_options.sql</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>game_options.sql</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="autoplay.lua">
+      <Name>autoplay</Name>
+      <Description>autoplay</Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

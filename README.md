@@ -7,20 +7,24 @@ Install python3+ (tested with 3.9), and the following packages:
 ```
 pywinauto
 pandas
+numpy
 ```
 
 ### Modpack
-VP is ran with a modpack for the following two reasons: speeding up time between games, and reducing the amount of menu automation needed to be done.
-Use a provided modpack or follow the steps at https://civ-5-cbp.fandom.com/wiki/Creating_a_Modpack to create one and place it in `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\DLC` (or your DLC location)
+VP is ran with a modpack so that the Civ 5 CLI automation can be used
+Use a provided modpack (https://www.dropbox.com/s/5oyw2eltkv87bbn/Modpack.VP.2.7.3.Autoplay.zip?dl=0) or follow the steps at https://civ-5-cbp.fandom.com/wiki/Creating_a_Modpack to create one (be sure to include the autoplay mod in this repo) and place it in `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\DLC` (or your DLC location)
 
-Alternatively, I have provided a modpack one can use here:
-https://www.dropbox.com/s/qq3c99yl07ojqsx/Modpack.VoxPopuli.2.7.3.ScoreLogging.zip?dl=0
+### Automation Entrypoint
+Copy `RunAutoplayGame.lua` from the root of this repo to `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\Automation`
+
+### Maps
+Copy `Community_79a.lua` to `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\Maps`
 
 ### Steam Options
 Properties -> General -> Launch Options
 must be set to
 ```
-"C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\CivilizationV.exe" %command%
+"C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\CivilizationV.exe" %command% -Automation RunAutoplayGame.lua
 ```
 (or your executable location)
 
@@ -29,14 +33,7 @@ The following options must be set in-game:
 
 Game Options:
 * Skip Intro Video Enabled
-* Single Player Quick Combat
-* Single Player Quick Movement
-* Advisor Level: No Advice
 * Optional: Turns Between Autosaves:1 and max autosaves kept:999
-
-Video Options:
-* Screen Resolution: 1024x768
-* Fullscreen: Disabled
 
 ### Game Config Options
 `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\config.ini`:
@@ -49,17 +46,32 @@ AIPerfLog = 1
 BuilderAILog = 1
 PlayerAndCityAILogSplit = 1
 LoggingEnabled = 1
+...
+[GAME]
+...
+
+; Force quick combat animations
+QuickCombat = 1
+
+...
+
+; Worldsize options are WORLDSIZE_DUEL/WORLDSIZE_TINY/WORLDSIZE_SMALL/WORLDSIZE_STANDARD/WORLDSIZE_LARGE/WORLDSIZE_HUGE
+WorldSize = WORLDSIZE_STANDARD
+
+...
+
+; Map Script file name
+Map = Assets\Maps\Communitu_79a.lua
+
+...
+
+; Handicap for quick play
+QuickHandicap = HANDICAP_EMPEROR
+
 ```
 
-### Game Setup:
-On the main menu under "Set Up Game" select the options you want - most of these are saved and applied every game
-
-
 ### Script Options
-Fill out `options.py` downloaded from this repo if installed in a non-standard location
-
-### Windows Options
-This script requires a desktop environment with a resolution of 1920x1080
+Fill out `options.py` downloaded from this repo
 
 ## Running the Script
 ```
@@ -68,5 +80,3 @@ python3 main.py
 from the root of the repo.
 
 Will save completed games to the `complete` directory in the civ 5 documents location (adjacent to `MODS`)
-
-My recommendation for after setup is to run 1v1 pangea games starting in information era to make sure the script cycles games and saves logs from each one correctly.
