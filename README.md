@@ -72,7 +72,7 @@ QuickHandicap = HANDICAP_EMPEROR
 ```
 
 ### Script Options
-Fill out `options.py` downloaded from this repo
+Fill out `config.py` downloaded from this repo with your install and local files locations
 
 ## Running the Script
 ```
