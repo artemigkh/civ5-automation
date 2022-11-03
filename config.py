@@ -5,4 +5,4 @@ config['local_dir'] = "C:/Users/Art/Documents/My Games/Sid Meier's Civilization 
 config['turn_timeout'] = 1000
 
 config['save_all_logs'] = False
-config['runs_count'] = 100
+config['runs_count'] = 999

@@ -200,7 +200,7 @@ class AutomatedGame:
 
 def main():
     success_count = 0
-    while success_count < 50:
+    while success_count < config['runs_count']:
         print(f'starting game #{success_count + 1}')
         automated_game = AutomatedGame(config)
         game_completed_successfully = automated_game.run_autoplay_game()
