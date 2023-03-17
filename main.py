@@ -42,7 +42,8 @@ logging.basicConfig(
 log_patterns_to_save = [
     'TechAILog',
     'Score_Log',
-    'GameResult_Log'
+    'GameResult_Log',
+    'PolicyAILog',
 ]
 
 
