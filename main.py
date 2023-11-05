@@ -44,6 +44,7 @@ log_patterns_to_save = [
     'Score_Log',
     'GameResult_Log',
     'PolicyAILog',
+    'ReligionLog',
 ]
 
 
@@ -169,6 +170,10 @@ class AutomatedGame:
         if most_recent_save is not None:
             logging.info(f'Saving most recent autosave: {most_recent_save}')
             shutil.copyfile(most_recent_save, loc / most_recent_save.name)
+
+        # Save map terrain file
+        shutil.copyfile(self.install_dir / 'Maps' / 'Civ5MapmapState_Turn000.Civ5Map', loc / 'Civ5MapmapState_Turn000.Civ5Map')
+
         logging.info("finished saving game data")
 
     def get_most_recent_save_file(self):

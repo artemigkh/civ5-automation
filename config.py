@@ -4,5 +4,5 @@ config['local_dir'] = "C:/Users/<your-username>/Documents/My Games/Sid Meier's C
 
 config['turn_timeout'] = 1000
 
-config['save_all_logs'] = False
+config['save_all_logs'] = True
 config['runs_count'] = 999
