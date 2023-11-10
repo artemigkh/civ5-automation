@@ -11,9 +11,11 @@ numpy
 ```
 
 ### Modpack
-VP is ran with a modpack so that the Civ 5 CLI automation can be used.
+VP is ran with a modpack so that the Civ 5 CLI automation can be used to enter a game directly without having to automate going through menus.
 
-Follow the steps at https://civ-5-cbp.fandom.com/wiki/Creating_a_Modpack to create one (be sure to include the autoplay mod in this repo) and place it in `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\DLC` (or your DLC location)
+The autoplay mod included in the base of this repo (`./autoplay`) MUST be included in the modpack used for automation. Game options may be first configured in `autoplay (v 1)/game_options.sql` if desired.
+
+Instructions for creating a modpack can be found at https://civ-5-cbp.fandom.com/wiki/Creating_a_Modpack . After creation, the modpack folder should be placed in `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\DLC` (or your DLC location)
 
 ### Automation Entrypoint
 Copy `RunAutoplayGame.lua` from the root of this repo to `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\Automation`
